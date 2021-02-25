@@ -62,6 +62,10 @@
     <Compile Include="FindAges.Designer.cs">
       <DependentUpon>FindAges.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangMan.Designer.cs" />
     <Compile Include="MagicSquare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +172,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reveal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hm_8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

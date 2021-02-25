@@ -30,15 +30,15 @@ namespace MidTerm
         private void InitializeComponent()
         {
             this.Level2Panel = new System.Windows.Forms.Panel();
+            this.Back = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.OpenLockersBtn = new System.Windows.Forms.Button();
+            this.FindAgesBtn = new System.Windows.Forms.Button();
             this.Level1Panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.BucketGameBtn = new System.Windows.Forms.Button();
             this.BeerGameBtn = new System.Windows.Forms.Button();
-            this.Back = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.OpenLockersBtn = new System.Windows.Forms.Button();
-            this.FindAgesBtn = new System.Windows.Forms.Button();
             this.Level3Panel = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -65,61 +65,6 @@ namespace MidTerm
             this.Level2Panel.Name = "Level2Panel";
             this.Level2Panel.Size = new System.Drawing.Size(460, 355);
             this.Level2Panel.TabIndex = 4;
-            // 
-            // Level1Panel
-            // 
-            this.Level1Panel.Controls.Add(this.button1);
-            this.Level1Panel.Controls.Add(this.button6);
-            this.Level1Panel.Controls.Add(this.BucketGameBtn);
-            this.Level1Panel.Controls.Add(this.BeerGameBtn);
-            this.Level1Panel.Location = new System.Drawing.Point(23, 14);
-            this.Level1Panel.Margin = new System.Windows.Forms.Padding(2);
-            this.Level1Panel.Name = "Level1Panel";
-            this.Level1Panel.Size = new System.Drawing.Size(460, 355);
-            this.Level1Panel.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(17, 302);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 37);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Go Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Back_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(136, 249);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(116, 26);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Game 7";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // BucketGameBtn
-            // 
-            this.BucketGameBtn.Location = new System.Drawing.Point(136, 159);
-            this.BucketGameBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.BucketGameBtn.Name = "BucketGameBtn";
-            this.BucketGameBtn.Size = new System.Drawing.Size(116, 26);
-            this.BucketGameBtn.TabIndex = 1;
-            this.BucketGameBtn.Text = "Bucket Game";
-            this.BucketGameBtn.UseVisualStyleBackColor = true;
-            this.BucketGameBtn.Click += new System.EventHandler(this.BucketGameBtn_Click);
-            // 
-            // BeerGameBtn
-            // 
-            this.BeerGameBtn.Location = new System.Drawing.Point(136, 75);
-            this.BeerGameBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.BeerGameBtn.Name = "BeerGameBtn";
-            this.BeerGameBtn.Size = new System.Drawing.Size(116, 24);
-            this.BeerGameBtn.TabIndex = 0;
-            this.BeerGameBtn.Text = "Beer Game";
-            this.BeerGameBtn.UseVisualStyleBackColor = true;
-            this.BeerGameBtn.Click += new System.EventHandler(this.BeerGameBtn_Click);
             // 
             // Back
             // 
@@ -163,6 +108,62 @@ namespace MidTerm
             this.FindAgesBtn.Text = "Find Ages";
             this.FindAgesBtn.UseVisualStyleBackColor = true;
             this.FindAgesBtn.Click += new System.EventHandler(this.FindAgesBtn_Click);
+            // 
+            // Level1Panel
+            // 
+            this.Level1Panel.Controls.Add(this.button1);
+            this.Level1Panel.Controls.Add(this.button6);
+            this.Level1Panel.Controls.Add(this.BucketGameBtn);
+            this.Level1Panel.Controls.Add(this.BeerGameBtn);
+            this.Level1Panel.Location = new System.Drawing.Point(23, 14);
+            this.Level1Panel.Margin = new System.Windows.Forms.Padding(2);
+            this.Level1Panel.Name = "Level1Panel";
+            this.Level1Panel.Size = new System.Drawing.Size(460, 355);
+            this.Level1Panel.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(17, 302);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 37);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Go Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Back_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(136, 249);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(116, 26);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Game 7";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // BucketGameBtn
+            // 
+            this.BucketGameBtn.Location = new System.Drawing.Point(136, 159);
+            this.BucketGameBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.BucketGameBtn.Name = "BucketGameBtn";
+            this.BucketGameBtn.Size = new System.Drawing.Size(116, 26);
+            this.BucketGameBtn.TabIndex = 1;
+            this.BucketGameBtn.Text = "Bucket Game";
+            this.BucketGameBtn.UseVisualStyleBackColor = true;
+            this.BucketGameBtn.Click += new System.EventHandler(this.BucketGameBtn_Click);
+            // 
+            // BeerGameBtn
+            // 
+            this.BeerGameBtn.Location = new System.Drawing.Point(136, 75);
+            this.BeerGameBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.BeerGameBtn.Name = "BeerGameBtn";
+            this.BeerGameBtn.Size = new System.Drawing.Size(116, 24);
+            this.BeerGameBtn.TabIndex = 0;
+            this.BeerGameBtn.Text = "Beer Game";
+            this.BeerGameBtn.UseVisualStyleBackColor = true;
+            this.BeerGameBtn.Click += new System.EventHandler(this.BeerGameBtn_Click);
             // 
             // Level3Panel
             // 

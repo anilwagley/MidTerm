@@ -95,5 +95,11 @@ namespace MidTerm
             Form RememberFlag = new RememberFlag();
             RememberFlag.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form Hangman = new HangMan();
+            Hangman.Show();
+        }
     }
 }
