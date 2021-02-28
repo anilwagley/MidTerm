@@ -30,6 +30,7 @@ namespace MidTerm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MagicSquare));
             this.row1col1 = new System.Windows.Forms.Button();
             this.row2col1 = new System.Windows.Forms.Button();
             this.row2col2 = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@ namespace MidTerm
             this.topleftdiagonal = new System.Windows.Forms.Label();
             this.bottomleftdiagonal = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // row1col1
@@ -225,7 +227,7 @@ namespace MidTerm
             // 
             // bottomleftdiagonal
             // 
-            this.bottomleftdiagonal.Location = new System.Drawing.Point(528, 49);
+            this.bottomleftdiagonal.Location = new System.Drawing.Point(439, 33);
             this.bottomleftdiagonal.Name = "bottomleftdiagonal";
             this.bottomleftdiagonal.Size = new System.Drawing.Size(56, 32);
             this.bottomleftdiagonal.TabIndex = 15;
@@ -236,11 +238,20 @@ namespace MidTerm
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(574, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(322, 254);
+            this.label1.TabIndex = 16;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
             // MagicSquare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 508);
+            this.ClientSize = new System.Drawing.Size(908, 508);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bottomleftdiagonal);
             this.Controls.Add(this.topleftdiagonal);
             this.Controls.Add(this.col3sum);
@@ -284,6 +295,7 @@ namespace MidTerm
         private System.Windows.Forms.Label topleftdiagonal;
         private System.Windows.Forms.Label bottomleftdiagonal;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

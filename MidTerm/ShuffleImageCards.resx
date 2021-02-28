@@ -117,15 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="label1.Text" xml:space="preserve">
-    <value>In a magic square, the sum of numbers in each row, column and diagonal will be the same.
-You are given a 3 x 3 sqaure with 9 cells filled with numbers 1 to 9.
-You should place the numbers in each cell to make a magic square.
+    <value>Move the squares to place the numbers in an order from 1-15.
+The first row containing numbers from 1-4.
+The second row containing numbers from 2-8.
+The third row containing numbers from 9-12.
+The last row containing numbers from 13-15.
 
-Drag each cell and drop it on another cell you want the number to be swapped with.
-The numbers around the cells display the sum. The numbers to the right are the sum of the rows, to the bottom are the sum of the columns and top-right and bottom-left are the diagonal sum.</value>
+You can move the squares by clicking on the squares adjacent to the empty square.
+This would move the clicked-upon square into the empty square. Continue to slide the squares until the numbers are in order.</value>
   </data>
 </root>

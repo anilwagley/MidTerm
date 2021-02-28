@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace MidTerm
 {
-    public partial class OpenLockers : Form
+    public partial class ShuffleImageCards : Form
     {
-        public OpenLockers()
+        public ShuffleImageCards()
         {
             InitializeComponent();
         }
-
-     
     }
 }
