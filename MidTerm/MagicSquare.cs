@@ -17,6 +17,7 @@ namespace MidTerm
         {
             InitializeComponent();
             ComputeSumOfAllLabels();
+            Feedback.Visible = false;
         }
 
 
@@ -30,6 +31,14 @@ namespace MidTerm
             CalculateSumOfCol3();
             CalculateSumOfTopleftdiagonal();
             CalculateSumOfBottomLeftDiagonal();
+            if(row1sum.Text == row2sum.Text && row1sum.Text == row3sum.Text && row1sum.Text == col1sum.Text
+                && row1sum.Text == col2sum.Text && row1sum.Text == col3sum.Text && row1sum.Text == topleftdiagonal.Text
+                && row1sum.Text == bottomleftdiagonal.Text)
+            {
+                Feedback.Text = "Great job! You won.";
+                Feedback.ForeColor = System.Drawing.Color.DarkGreen;
+                Feedback.Visible = true;
+            }
         }
 
         #region sum computation

@@ -50,6 +50,7 @@ namespace MidTerm
             this.bottomleftdiagonal = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.Feedback = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // row1col1
@@ -246,11 +247,22 @@ namespace MidTerm
             this.label1.TabIndex = 16;
             this.label1.Text = resources.GetString("label1.Text");
             // 
+            // Feedback
+            // 
+            this.Feedback.AutoSize = true;
+            this.Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Feedback.Location = new System.Drawing.Point(638, 328);
+            this.Feedback.Name = "Feedback";
+            this.Feedback.Size = new System.Drawing.Size(60, 24);
+            this.Feedback.TabIndex = 17;
+            this.Feedback.Text = "label2";
+            // 
             // MagicSquare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 508);
+            this.Controls.Add(this.Feedback);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bottomleftdiagonal);
             this.Controls.Add(this.topleftdiagonal);
@@ -272,6 +284,7 @@ namespace MidTerm
             this.Name = "MagicSquare";
             this.Text = "Magic Square 3x3";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -296,6 +309,7 @@ namespace MidTerm
         private System.Windows.Forms.Label bottomleftdiagonal;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Feedback;
     }
 }
 

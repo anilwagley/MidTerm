@@ -101,5 +101,11 @@ namespace MidTerm
             Form Hangman = new HangMan();
             Hangman.Show();
         }
+
+        private void FormOrder_Click(object sender, EventArgs e)
+        {
+            Form formOrder = new FormOrder();
+            formOrder.Show();
+        }
     }
 }

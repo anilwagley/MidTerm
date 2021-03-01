@@ -15,8 +15,22 @@ namespace MidTerm
         public OpenLockers()
         {
             InitializeComponent();
+            Feedback.Visible = false;
         }
 
-     
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Option1.Checked)
+            {
+                Feedback.Text = "Congrats! That's the correct answer";
+                Feedback.ForeColor = System.Drawing.Color.DarkGreen;
+            }
+            else
+            {
+                Feedback.Text = "That's an incorrect answer. Try again.";
+                Feedback.ForeColor = System.Drawing.Color.Red;
+            }
+            Feedback.Visible = true;
+        }
     }
 }
