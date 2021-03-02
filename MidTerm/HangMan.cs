@@ -19,6 +19,7 @@ namespace MidTerm
         int totalMistakes = 0;
         int boxSize = 40;
         string selectedState = "";
+        int score = 0;
 
         public HangMan()
         {
@@ -131,10 +132,38 @@ namespace MidTerm
             
         }
 
+        private bool HasWon()
+        {
+            // Determine if the user selected all alphabets correctly
+            int remainingAlphabets = 0;
+
+            // Iterate through all controls
+            foreach (Control i in this.Controls)
+            {
+                // Make sure it's a label
+                if (i is Label)
+                {
+                    // Make sure that the label is the state alphabet label
+                    if ((i as Label).Name.ToString().Contains("stateAlpha"))
+                    {
+                        remainingAlphabets++;
+                    }
+                }
+            }
+
+            // Calculate the score
+            score = remainingAlphabets > 0 ? 
+                (int)(((((StateAlpha.Count - remainingAlphabets)*100) / StateAlpha.Count)*15)/100) : 
+                15;
+
+            // Return the final result
+            return remainingAlphabets > 0 ? false : true;
+        }
+
         private void Alphabet_ClickedEvent(object sender, EventArgs e)
         {
             // Check if total mistakes is 8 (complete hang); if so terminate here
-            if (totalMistakes >= 8)
+            if (totalMistakes >= 8 || HasWon())
             {
                 return;
             }
@@ -167,10 +196,16 @@ namespace MidTerm
                                 (i as Label).Text = clickedChar.ToString();
 
                                 // Rename it to something different to avoid selecting next time
-                                (i as Label).Name = "stateAlphaAddressed" + i;
+                                (i as Label).Name = "taken" + i;
 
                                 // Replace that character with dash sign to exclude next time
                                 StateAlpha[indexPosition] = "-".ToCharArray()[0];
+
+                                // Check if already won
+                                if (HasWon())
+                                {
+                                    Hang(true);
+                                }
 
                                 // Terminate right here
                                 return;
@@ -189,24 +224,41 @@ namespace MidTerm
             }
         }
 
-        private void Hang()
+        private void Hang(bool win = false)
         {
-            // Make sure the mistakes are already 8
-            if (totalMistakes >= 8)
+            // Make sure the mistakes are already 8 OR has already won
+            if (totalMistakes >= 8 || win == true)
             {
                 // It's hung so lets reveal the answer
                 Label label = new Label();
-                label.Text = "Answer: " + selectedState.ToString();
                 label.ForeColor = Color.Black;
                 label.Font = new Font("Arial", 15, FontStyle.Bold);
                 label.Location = new Point(340, 150);
                 label.Name = "answer";
                 label.TextAlign = ContentAlignment.MiddleCenter;
                 label.AutoSize = true;
-                this.Controls.Add(label);
 
-                // Show the game restart button
-                button1.Show();
+                if (win == true)
+                {
+                    label.Text = "Congratulations !\n Score: " + score + "/15";
+
+                    // Add the label
+                    this.Controls.Add(label);
+
+                    // Show the game restart button
+                    button1.Show();
+
+                    return;
+                } else
+                {
+                    label.Text = "Answer: " + selectedState.ToString() + "\n Score: " + score + "/15";
+
+                    // Add the label
+                    this.Controls.Add(label);
+
+                    // Show the game restart button
+                    button1.Show();
+                }
             }
 
             // Otherwise, increase the higher steps of hangman 

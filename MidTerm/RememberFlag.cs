@@ -20,6 +20,7 @@ namespace MidTerm
         private List<int> immediatePosition = new List<int>();
         private int counter = 30; // (seconds)
         private Timer timer = null;
+        int score = 0;
 
         public RememberFlag()
         {
@@ -253,20 +254,45 @@ namespace MidTerm
 
         private void DisplayMessage()
         {
+            // Determine the total remained picture-boxes
+            int remainingBoxes = 0;
+
+            // Iterate throgh each controls
+            foreach (Control i in this.Controls)
+            {
+                // Make sure it's a picture-box
+                if (i is PictureBox)
+                {
+                    if ((i as PictureBox).ImageLocation == "0.png" || (i as PictureBox).ImageLocation == null)
+                    {
+                        remainingBoxes++;
+                    }
+                }
+            }
+
+            if (remainingBoxes == 0)
+            {
+                score = 15;
+            }
+            else
+            {
+                score = ((((16 - remainingBoxes)*100)/16)*15)/100;
+            }
+                    
             // Make sure that the label is empty
             if (winorloss.Text == "")
             {
                 // If there are some remaining picture-boxes, display lost message
                 if (Remaining())
                 {
-                    winorloss.Text = "You Lost!";
+                    winorloss.Text = "You Lost!\nScore: " + score;
                     winorloss.ForeColor = Color.Red;
                 }
 
                 // Otherwise, display win message
                 else
                 {
-                    winorloss.Text = "You Won!";
+                    winorloss.Text = "Congratulations !\nScore: " + score;
                     winorloss.ForeColor = Color.Green;
                 }
             }
