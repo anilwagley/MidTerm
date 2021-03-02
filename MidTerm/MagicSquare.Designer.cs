@@ -51,6 +51,8 @@ namespace MidTerm
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.Feedback = new System.Windows.Forms.Label();
+            this.scoreDisplay = new System.Windows.Forms.Label();
+            this.counterDisplay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // row1col1
@@ -241,7 +243,8 @@ namespace MidTerm
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(574, 33);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(554, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(322, 254);
             this.label1.TabIndex = 16;
@@ -250,18 +253,41 @@ namespace MidTerm
             // Feedback
             // 
             this.Feedback.AutoSize = true;
-            this.Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Feedback.Location = new System.Drawing.Point(638, 328);
+            this.Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Feedback.ForeColor = System.Drawing.Color.Red;
+            this.Feedback.Location = new System.Drawing.Point(596, 400);
             this.Feedback.Name = "Feedback";
-            this.Feedback.Size = new System.Drawing.Size(60, 24);
+            this.Feedback.Size = new System.Drawing.Size(200, 25);
             this.Feedback.TabIndex = 17;
-            this.Feedback.Text = "label2";
+            this.Feedback.Text = "Time is up ! Try again";
+            // 
+            // scoreDisplay
+            // 
+            this.scoreDisplay.AutoSize = true;
+            this.scoreDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreDisplay.Location = new System.Drawing.Point(170, 455);
+            this.scoreDisplay.Name = "scoreDisplay";
+            this.scoreDisplay.Size = new System.Drawing.Size(69, 25);
+            this.scoreDisplay.TabIndex = 18;
+            this.scoreDisplay.Text = "Score";
+            // 
+            // counterDisplay
+            // 
+            this.counterDisplay.AutoSize = true;
+            this.counterDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.counterDisplay.Location = new System.Drawing.Point(671, 45);
+            this.counterDisplay.Name = "counterDisplay";
+            this.counterDisplay.Size = new System.Drawing.Size(77, 39);
+            this.counterDisplay.TabIndex = 19;
+            this.counterDisplay.Text = "300";
             // 
             // MagicSquare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 508);
+            this.Controls.Add(this.counterDisplay);
+            this.Controls.Add(this.scoreDisplay);
             this.Controls.Add(this.Feedback);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bottomleftdiagonal);
@@ -310,6 +336,8 @@ namespace MidTerm
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Feedback;
+        private System.Windows.Forms.Label scoreDisplay;
+        private System.Windows.Forms.Label counterDisplay;
     }
 }
 

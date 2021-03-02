@@ -48,6 +48,8 @@ namespace MidTerm
             this.button16 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Feedback = new System.Windows.Forms.Label();
+            this.counterDisplay = new System.Windows.Forms.Label();
+            this.scoreDisplay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -186,12 +188,25 @@ namespace MidTerm
             // Feedback
             // 
             resources.ApplyResources(this.Feedback, "Feedback");
+            this.Feedback.ForeColor = System.Drawing.Color.Red;
             this.Feedback.Name = "Feedback";
+            // 
+            // counterDisplay
+            // 
+            resources.ApplyResources(this.counterDisplay, "counterDisplay");
+            this.counterDisplay.Name = "counterDisplay";
+            // 
+            // scoreDisplay
+            // 
+            resources.ApplyResources(this.scoreDisplay, "scoreDisplay");
+            this.scoreDisplay.Name = "scoreDisplay";
             // 
             // FormOrder
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.scoreDisplay);
+            this.Controls.Add(this.counterDisplay);
             this.Controls.Add(this.Feedback);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button16);
@@ -237,5 +252,7 @@ namespace MidTerm
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Feedback;
+        private System.Windows.Forms.Label counterDisplay;
+        private System.Windows.Forms.Label scoreDisplay;
     }
 }

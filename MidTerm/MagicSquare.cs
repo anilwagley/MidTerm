@@ -13,11 +13,19 @@ namespace MidTerm
     public partial class MagicSquare : Form
     {
         Button buttonBeingDragged;
+        private int counter = 300; // (seconds)
+        private Timer timer = null;
+        bool firstTimeClick = true;
         public MagicSquare()
         {
             InitializeComponent();
             ComputeSumOfAllLabels();
             Feedback.Visible = false;
+
+            scoreDisplay.Visible = false;
+            counterDisplay.Visible = false;
+            // Instantiate a new Timer
+            timer = new Timer();
         }
 
 
@@ -38,6 +46,13 @@ namespace MidTerm
                 Feedback.Text = "Great job! You won.";
                 Feedback.ForeColor = System.Drawing.Color.DarkGreen;
                 Feedback.Visible = true;
+
+                double score = (counter < 280) ? (counter / 280.0) * 15 : 15;
+                scoreDisplay.Text = "Score: " + Math.Floor(score);
+                scoreDisplay.Visible = true;
+
+                timer.Stop();
+                counterDisplay.Visible = false;
             }
         }
 
@@ -97,9 +112,52 @@ namespace MidTerm
             Button button = sender as Button;
             buttonBeingDragged = button;
             button.DoDragDrop(button.Text, DragDropEffects.Copy);
+
+            // Display and start the timer on first time user click on any of the buttons
+            if(firstTimeClick)
+            {
+                firstTimeClick = false;
+                counterDisplay.Visible = true;
+                Countdown();
+            }
         }
 
         #endregion
+
+        private void DisplayTimer(object sender, EventArgs e)
+        {
+            // Decrease the counter
+            counter--;
+
+            // Display the counter value on the label 
+            counterDisplay.Text = counter.ToString();
+
+            // Check if the counter has reached to zero (0)
+            if (counter == 0)
+            {
+                // Stop the timer
+                timer.Stop();
+
+                Feedback.Visible = true;
+                scoreDisplay.Text = "Score: 0";
+                scoreDisplay.Visible = true;
+            }
+        }
+
+        void Countdown()
+        {
+            // Increament the tick
+            timer.Tick += new EventHandler(DisplayTimer);
+
+            // Determine the interval
+            timer.Interval = 1000;
+
+            // Start the counter
+            timer.Start();
+
+            // Display the counter value on the label
+            counterDisplay.Text = counter.ToString();
+        }
 
 
         #region DragEnter Handler

@@ -129,4 +129,7 @@ Drag each cell and drop it on another cell you want the number to be swapped wit
 The numbers around the cells display the sum. The numbers to the right are the sum of the rows, to the bottom are the sum of the columns and the numbers on the top and bottm right corners 
 are the diagonals sum.</value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>
