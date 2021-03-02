@@ -23,15 +23,24 @@ namespace MidTerm
         }
 
         public int size { get; set; }
+
+        /// <summary>
+        /// Gets invoked when any of the squares is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             int tabIndex = Convert.ToInt32(b.Tag);
+
+            //Calculates the indexes of the surrounding cells
             int rightIndex = ((tabIndex % size) < size - 1) ? tabIndex+1 : -1;
             int leftIndex = ((tabIndex % size > 0)) ? tabIndex - 1 : 0;
             int upIndex = ((tabIndex > size - 1)) ? tabIndex - size : -1;
             int downIndex = ((tabIndex < size*(size - 1))) ? tabIndex + size : -1;
 
+            //If the user clicks on a button for the first time, start the timer and display it
             if(firstTimeClick)
             {
                 firstTimeClick = false;
@@ -39,10 +48,10 @@ namespace MidTerm
                 Countdown();
             }
 
-            PerformSwap(tabIndex, rightIndex,b);
-            PerformSwap(tabIndex, leftIndex, b);
-            PerformSwap(tabIndex, upIndex, b);
-            PerformSwap(tabIndex, downIndex, b);
+            PerformSwap( rightIndex,b);
+            PerformSwap( leftIndex, b);
+            PerformSwap( upIndex, b);
+            PerformSwap( downIndex, b);
             ValidateWin();
         }
 
@@ -82,7 +91,9 @@ namespace MidTerm
         }   
 
        
-
+        /// <summary>
+        /// Validate if the squares are placed in order
+        /// </summary>
         private void ValidateWin()
         {
             if(button1.Text == "1" && button5.Text == "2" && button8.Text == "3" && button11.Text == "4"
@@ -90,13 +101,17 @@ namespace MidTerm
                 && button3.Text == "9" && button7.Text == "10" && button10.Text =="11" && button15.Text == "12"
                 && button4.Text == "13" && button13.Text == "14" && button14.Text == "15" && button16.Text == "16")
             {
-                int score = counter < 140 ? (counter/140.0)*10  : 10;
+                //Display the feedback message
                 Feedback.Text = "Excellent! That was fun.";
-                scoreDisplay.Text = "Score: " + score;
                 Feedback.ForeColor = System.Drawing.Color.DarkGreen;
                 Feedback.Visible = true;
+
+                //Calculate and Display the score
+                double score = counter < 140 ? (counter / 140.0) * 10 : 10;
+                scoreDisplay.Text = "Score: " + Math.Floor(score);
                 scoreDisplay.Visible = true;
 
+                //Stop the timer 
                 timer.Stop();
                 counterDisplay.Visible = false;
             } 
@@ -108,16 +123,17 @@ namespace MidTerm
         /// <param name="tabIndex"></param>
         /// <param name="adjIndex"></param>
         /// <param name="b"></param>
-        private void PerformSwap(int tabIndex, int adjIndex, Button b)
+        private void PerformSwap(int adjIndex, Button b)
         {
             if(adjIndex >= 0)
             {
            
-
+                //Get the control button whose tag is equal to the adjIndex value
                 Button adjButton = this.Controls.OfType<Button>()
                                     .Where(btn => Convert.ToInt32(btn.Tag) == adjIndex)
                                     .FirstOrDefault();
-                                    
+                 
+               //If the adjacent button is the empty square, swap the values
                 if(String.IsNullOrEmpty(adjButton.Text))
                 {
                     Console.WriteLine(adjButton.Text);

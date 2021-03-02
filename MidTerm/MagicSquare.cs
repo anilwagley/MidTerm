@@ -28,7 +28,9 @@ namespace MidTerm
             timer = new Timer();
         }
 
-
+        /// <summary>
+        /// Computes the sum of all rows, columns and diagonals on every button drag and drop
+        /// </summary>
         private void ComputeSumOfAllLabels()
         {
             CalculateSumOfRow1();
@@ -43,14 +45,17 @@ namespace MidTerm
                 && row1sum.Text == col2sum.Text && row1sum.Text == col3sum.Text && row1sum.Text == topleftdiagonal.Text
                 && row1sum.Text == bottomleftdiagonal.Text)
             {
+                //Display the feedback message
                 Feedback.Text = "Great job! You won.";
                 Feedback.ForeColor = System.Drawing.Color.DarkGreen;
                 Feedback.Visible = true;
 
+                //Display the score
                 double score = (counter < 280) ? (counter / 280.0) * 15 : 15;
                 scoreDisplay.Text = "Score: " + Math.Floor(score);
                 scoreDisplay.Visible = true;
 
+                //Stop the timer
                 timer.Stop();
                 counterDisplay.Visible = false;
             }
@@ -174,6 +179,7 @@ namespace MidTerm
         #region DragDrop Handler
         private void DragDropHandler(object sender, DragEventArgs e)
         {
+            //Swaps the text of the button being dragged and button that gets dropped onto
             Button button = sender as Button;
             buttonBeingDragged.Text = button.Text;
             button.Text = e.Data.GetData(DataFormats.Text).ToString();
