@@ -16,6 +16,7 @@ namespace MidTerm
         private Color BeerColor = Color.SandyBrown;
         private Color EmptyColor = Color.Transparent;
         private List<int> current = new List<int> { 0, 0 };
+        int score = 5;
 
         public BeerGame()
         {
@@ -255,7 +256,7 @@ namespace MidTerm
             // If container 5 has amount 4, then call it success
             if (current[1] == 4)
             {
-                label1.Text = "Congratulations !";
+                label1.Text = "Congratulations !\nScore: " + score;
             } else
             {
                 label1.Text = "Three-Pint: " + current[0] + ", Five-Pint: " + current[1];
